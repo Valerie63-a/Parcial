@@ -1,5 +1,5 @@
 # le pedimos al usuario que ponga un valor para k y ponemos que es float porque puede usar decimales
-k= float(input("Por favor ingresa un valor numerico para k: "))
+k= float(input("Por favor ingresa un valor numérico para k: "))
 # evaluamos el valor de k y clasificamos el tipo de material
 if k<0.1:
     print("Aislante termico")
