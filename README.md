@@ -47,7 +47,7 @@
 2. Corre el instalador y sigue los pasos del asistente de instalación.
 3. Elige la carpeta de instalación y guárdala para más tarde.
 4. Al finalizar la instalación, marca la opción **"Ejecutar MSYS2"** y haz clic en **"Terminar"**. Se abrirá automáticamente una ventana de terminal de MSYS2.
-5. En la terminal de MSYS2, instala la cadena de herramientas de **MinGW-w64** con el siguiente comando:
+5. En la terminal de MSYS2, instala la cadena de herramientas de **MinGW-w64** con el siguiente comando: `pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain`
 6. Se mostrará una lista de paquetes disponibles. Acepta la cantidad de paquetes por defecto presionando **Enter**.
 7. Escribe **"Y"** cuando te lo pidan para continuar con la instalación.
 8. Agrega la carpeta `bin` de **MinGW-w64** a las variables de entorno de Windows:
@@ -56,30 +56,97 @@
 - En las variables de usuario, selecciona **"Editar"**.
 - Haz clic en **"Nuevo"** y añade la ruta de **MinGW-w64** que guardaste previamente.
 - Acepta los cambios y cierra la ventana.
+- Crea una carpeta de proyectos para **Visual Studio** y crea una subcarpeta con el nombre de tu espacio, abre **Visual Studio** con los siguientes comandos:
+  
+  `mkdir proyectos`
+  
+  `cd proyectos`
+  
+  `mkdir espacio`
+  
+  `cd espacio`
+  
+  `code .`
+- El comando `code .` abre **Visual Studio** en la carpeta de trabajo
 
-#### Escribir el código:
-1. Escribe tu código en **Visual Studio**.
-2. Guarda el archivo con extensión **.cpp**.
+#### Abre el codigo:
+1. Abre el codigo con extension `.cpp`.
 
 #### Compilar y ejecutar en Visual Studio:
 1. En la parte superior derecha, busca el botón de **"Play"** con una flecha hacia abajo.
 2. Haz clic en la flecha y selecciona **"Ejecutar un archivo C++"**.
+3. Si es la primera vez ejecutando un archivo **C++**: En la configuracion selecciona **C++: g++.exe build and debug active file**
+4. Una vez la contruccion termine el programa aparecera en la `terminal` integrada en **Visual Studio**
+5. **El programa solicitará un valor númerico, por favor ingrese este valor y oprima "enter"**
 
 ---
 
 ## 2. Compilar y Ejecutar en Linux
 
 ### Requisitos:
-- **Compilador:** Instala **g++ (GNU C++ Compiler)**.
-- **Editor de texto:** Puedes usar **nano, vim, gedit**, o cualquier otro editor.
+- **Compilador:** Instala GCC (compilador g++ y debugger GDB) (GNU C++ Compiler) y Microsoft Visual Studio.
+- **Editor de texto:** Puedes usar nano, vim, gedit, o cualquier otro editor.
 
 ### Pasos:
 
-#### Instalar g++:
-1. Abre una terminal y ejecuta:
+#### Instalar GCC:
+1. Abre una terminal y ejecuta el siguiente comando: `sudo apt-get update`
+2. Luego utiliza el siguiente comando en la terminal para instalar las herramientas de compilador GNU y el debugger: `sudo apt-get install build-essential gdb`. 
+- Crea una carpeta de proyectos para **Visual Studio** y crea una subcarpeta con el nombre de tu espacio, abre **Visual Studio** con los siguientes comandos:
+  
+  `mkdir proyectos`
+  
+  `cd proyectos`
+  
+  `mkdir espacio`
+  
+  `cd espacio`
+  
+  `code .`
+- El comando `code .` abre **Visual Studio** en la carpeta de trabajo
 
-#### Escribir el código:
-1. Guarda tu código en un archivo con extensión **.cpp** (e.g., `main.cpp`).
+#### Abre el codigo:
+1. Abre el codigo con extension `.cpp`.
 
-#### Compilar:
-1. Navega al directorio donde está tu archivo `.cpp` usando:
+#### Compilar y ejecutar en Visual Studio:
+1. En la parte superior derecha, busca el botón de **"Play"** con una flecha hacia abajo.
+2. Haz clic en la flecha y selecciona **"Ejecutar un archivo C++"**.
+3. Si es la primera vez ejecutando un archivo **C++**: En la configuracion selecciona **C++: g++ build and debug active file**
+4. Una vez la contruccion termine el programa aparecera en la `terminal` integrada en **Visual Studio**
+5. **El programa solicitará un valor númerico, por favor ingrese este valor y oprima "enter"**
+   
+---
+
+## 3. Compilar y Ejecutar en Mac OS
+
+### Requisitos:
+- **Compilador:** Instala Clang/LLVM (compilador y debugger) y Microsoft Visual Studio.
+- **Editor de texto:** Puedes usar nano, vim, gedit, o cualquier otro editor.
+
+### Pasos:
+
+#### Instalar Clang:
+1. Abre una terminal y ejecuta el siguiente comando: `xcode-select --install`
+- Crea una carpeta de proyectos para **Visual Studio** y crea una subcarpeta con el nombre de tu espacio, abre **Visual Studio** con los siguientes comandos:
+  
+  `mkdir proyectos`
+  
+  `cd proyectos`
+  
+  `mkdir espacio`
+  
+  `cd espacio`
+  
+  `code .`
+- El comando `code .` abre **Visual Studio** en la carpeta de trabajo
+
+#### Abre el codigo:
+1. Abre el codigo con extension `.cpp`.
+
+#### Compilar y ejecutar en Visual Studio:
+1. En la parte superior derecha, busca el botón de **"Play"** con una flecha hacia abajo.
+2. Haz clic en la flecha y selecciona **"Ejecutar un archivo C++"**.
+3. Si es la primera vez ejecutando un archivo **C++**: En la configuracion selecciona **C++: clang++ build and debug active file**
+4. Una vez la contruccion termine el programa aparecera en la `Debug Console` integrada en **Visual Studio**
+5. **El programa solicitará un valor númerico, por favor ingrese este valor y oprima "enter"**
+
